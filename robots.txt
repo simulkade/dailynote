@@ -1,2 +1,4 @@
-Sitemap: http://pvt.simulkade.com/sitemapindex.xml
+Sitemap: http://dailynote.simulkade.com/sitemapindex.xml
 
+User-Agent: *
+Host: dailynote.simulkade.com

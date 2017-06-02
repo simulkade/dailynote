@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>Daily Notes (Posts about mathjax)</title><link>http://dailynote.simulkade.com/</link><description></description><atom:link type="application/rss+xml" rel="self" href="http://dailynote.simulkade.com/categories/mathjax.xml"></atom:link><language>en</language><lastBuildDate>Fri, 02 Jun 2017 19:16:18 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Daily notes - 1 June 2017</title><link>http://dailynote.simulkade.com/posts/2017-06-01-daily-notes.html</link><dc:creator>AA Eftekhari</dc:creator><description>&lt;div&gt;&lt;p&gt;I'm in the library and this is my plan for today:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Read the recovery data from the data base&lt;/li&gt;
+&lt;li&gt;Write an objective function based on the Buckley-Leverett formulation&lt;/li&gt;
+&lt;li&gt;Run the optimization problem in Julia&lt;/li&gt;
+&lt;li&gt;Optimize the rel-perm parameters&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Funny story: the paper that has done core flooding and reported the recovery data at high temperature, does not report the viscosity of oil at high temperature. I had to calculate it using this correlation:
+$$\ln(\frac{\mu}{\mu_0}) = B(\frac{1}{T}-\frac{1}{T_0})$$
+I found the B value by fitting the above equation to the viscosity data of n-Dodecane. The viscosity data comes from the cool &lt;a href="http://www.coolprop.org"&gt;CoolProp&lt;/a&gt; package.  &lt;/p&gt;
+&lt;p&gt;The recovery data is not a straight line at the beginning of the core flooding. It must be a problem in choosing the right moment to start the timer. I shifted the curve to make it consistent.  &lt;/p&gt;
+&lt;p&gt;The most important problem with using the analytical solution of the BL equation as an objective function is that very occasionally, the shock front cannot be found with a reasonable numerical accuracy. This blows up the objective function and the whole optimization procedure. Perhaps, I should try the numerical solution (upwind) that is slower, but (almost) always converges.  &lt;/p&gt;&lt;/div&gt;</description><category>mathjax</category><guid>http://dailynote.simulkade.com/posts/2017-06-01-daily-notes.html</guid><pubDate>Thu, 01 Jun 2017 06:34:44 GMT</pubDate></item></channel></rss>

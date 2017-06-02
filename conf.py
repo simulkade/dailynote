@@ -17,16 +17,16 @@ import time
 
 
 # Data about this site
-BLOG_AUTHOR = "AAE"  # (translatable)
-BLOG_TITLE = "PVTtool"  # (translatable)
+BLOG_AUTHOR = "AA Eftekhari"  # (translatable)
+BLOG_TITLE = "Daily Notes"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link
-SITE_URL = "http://pvt.simulkade.com/"
+SITE_URL = "http://dailynote.simulkade.com/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "http://pvt.simulkade.com"
 BLOG_EMAIL = "a.a.eftekhari@outlook.com"
-BLOG_DESCRIPTION = "Phase equilibrium in practice"  # (translatable)
+BLOG_DESCRIPTION = "My daily notes"  # (translatable)
 
 # Nikola is multilingual!
 #
@@ -129,7 +129,7 @@ NAVIGATION_LINKS = {
 }
 
 # Name of the theme to use.
-THEME = "ipython"
+THEME = "lanyon"
 
 # Below this point, everything is optional
 
@@ -203,16 +203,15 @@ TIMEZONE = "Europe/Amsterdam"
 POSTS = (
     ("posts/*.rst", "posts", "post.tmpl"),
     ("posts/*.txt", "posts", "post.tmpl"),
-    ("posts/*.ipynb", "posts", "post.tmpl"),
     ("posts/*.md", "posts", "post.tmpl"),
+    ("posts/*.ipynb", "posts", "post.tmpl"),
 )
 PAGES = (
     ("stories/*.rst", "stories", "story.tmpl"),
     ("stories/*.txt", "stories", "story.tmpl"),
-    ("stories/*.ipynb", "stories", "story.tmpl"),
     ("stories/*.md", "stories", "story.tmpl"),
+    ("stories/*.ipynb", "stories", "story.tmpl"),
 )
-
 
 # One or more folders containing files to be copied as-is into the output.
 # The format is a dictionary of {source: relative destination}.
@@ -266,11 +265,11 @@ COMPILERS = {
 # Nikola supports logo display.  If you have one, you can put the URL here.
 # Final output is <img src="LOGO_URL" id="logo" alt="BLOG_TITLE">.
 # The URL may be relative to the site root.
-# LOGO_URL = ''
+LOGO_URL = ''
 
 # If you want to hide the title of your website (for example, if your logo
 # already contains the text), set this to False.
-# SHOW_BLOG_TITLE = True
+SHOW_BLOG_TITLE = True
 
 # Writes tag cloud data in form of tag_cloud_data.json.
 # Warning: this option will change its default value to False in v8!
@@ -401,7 +400,7 @@ GITHUB_DEPLOY_BRANCH = 'gh-pages'
 
 # The name of the remote where you wish to push to, using github_deploy.
 GITHUB_REMOTE_NAME = 'origin'
-
+GITHUB_COMMIT_SOURCE = True
 # Where the output site should be located
 # If you don't use an absolute path, it will be considered as relative
 # to the location of conf.py
@@ -567,7 +566,7 @@ GITHUB_REMOTE_NAME = 'origin'
 # }
 
 # Show only teasers in the index pages? Defaults to False.
-# INDEX_TEASERS = False
+INDEX_TEASERS = True
 
 # HTML fragments with the Read more... links.
 # The following tags exist and are replaced for you:
@@ -584,13 +583,13 @@ GITHUB_REMOTE_NAME = 'origin'
 # 'Read more...' for the index page, if INDEX_TEASERS is True (translatable)
 INDEX_READ_MORE_LINK = '<p class="more"><a href="{link}">{read_more}…</a></p>'
 # 'Read more...' for the RSS_FEED, if RSS_TEASERS is True (translatable)
-RSS_READ_MORE_LINK = '<p><a href="{link}">{read_more}…</a> ({min_remaining_read})</p>'
+FEED_READ_MORE_LINK = '<p><a href="{link}">{read_more}…</a> ({min_remaining_read})</p>'
 
 # Append a URL query to the RSS_READ_MORE_LINK and the //rss/item/link in
 # RSS feeds. Minimum example for Piwik "pk_campaign=rss" and Google Analytics
 # "utm_source=rss&utm_medium=rss&utm_campaign=rss". Advanced option used for
 # traffic source tracking.
-RSS_LINKS_APPEND_QUERY = False
+FEED_LINKS_APPEND_QUERY = False
 
 # A HTML fragment describing the license, for the sidebar.
 # (translatable)
@@ -634,12 +633,12 @@ CONTENT_FOOTER_FORMATS = {
 # systems.  The following comment systems are supported by Nikola:
 #   disqus, facebook, googleplus, intensedebate, isso, livefyre, muut
 # You can leave this option blank to disable comments.
-#COMMENT_SYSTEM = "disqus"
+COMMENT_SYSTEM = "disqus"
 # And you also need to add your COMMENT_SYSTEM_ID which
 # depends on what comment system you use. The default is
 # "nikolademo" which is a test account for Disqus. More information
 # is in the manual.
-#COMMENT_SYSTEM_ID = "pvtool"
+COMMENT_SYSTEM_ID = "simulkade"
 
 # Enable annotations using annotateit.org?
 # If set to False, you can still enable them for individual posts and pages
@@ -766,7 +765,7 @@ SOCIAL_BUTTONS_CODE = ""
 
 # Show link to source for the posts?
 # Formerly known as HIDE_SOURCELINK (inverse)
-# SHOW_SOURCELINK = True
+SHOW_SOURCELINK = True
 # Copy the source files for your pages?
 # Setting it to False implies SHOW_SOURCELINK = False
 # COPY_SOURCES = True
@@ -785,7 +784,7 @@ SOCIAL_BUTTONS_CODE = ""
 # RSS_LINK = None
 
 # Show only teasers in the RSS feed? Default to True
-# RSS_TEASERS = True
+FEED_TEASERS = True
 
 # Strip HTML in the RSS feed? Default to False
 # RSS_PLAIN = False
@@ -800,20 +799,20 @@ SOCIAL_BUTTONS_CODE = ""
 # This search form works for any site and looks good in the "site" theme where
 # it appears on the navigation bar:
 #
-SEARCH_FORM = """
-<!-- Custom search -->
-<form method="get" id="search" action="//duckduckgo.com/"
- class="navbar-form pull-left">
-<input type="hidden" name="sites" value="%s"/>
-<input type="hidden" name="k8" value="#444444"/>
-<input type="hidden" name="k9" value="#D51920"/>
-<input type="hidden" name="kt" value="h"/>
-<input type="text" name="q" maxlength="255"
- placeholder="Search&hellip;" class="span2" style="margin-top: 4px;"/>
-<input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
-</form>
-<!-- End of custom search -->
-""" % SITE_URL
+# SEARCH_FORM = """
+# <!-- Custom search -->
+# <form method="get" id="search" action="//duckduckgo.com/"
+#  class="navbar-form pull-left">
+# <input type="hidden" name="sites" value="%s"/>
+# <input type="hidden" name="k8" value="#444444"/>
+# <input type="hidden" name="k9" value="#D51920"/>
+# <input type="hidden" name="kt" value="h"/>
+# <input type="text" name="q" maxlength="255"
+#  placeholder="Search&hellip;" class="span2" style="margin-top: 4px;"/>
+# <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
+# </form>
+# <!-- End of custom search -->
+# """ % SITE_URL
 #
 # If you prefer a Google search form, here's an example that should just work:
 # SEARCH_FORM = """
@@ -846,18 +845,18 @@ SEARCH_FORM = """
 # Google Analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
 # (translatable)
-#BODY_END = """
-#<script>
-#  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||#function(){
-#  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-#  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-#  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+BODY_END = """
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-#  ga('create', 'UA-51207335-2', 'auto');
-#  ga('send', 'pageview');
+  ga('create', 'UA-51207335-1', 'auto');
+  ga('send', 'pageview');
 
-#</script>
-#"""
+</script>
+"""
 
 # The possibility to extract metadata from the filename by using a
 # regular expression.
@@ -906,7 +905,7 @@ UNSLUGIFY_TITLES = True
 # }
 
 # If webassets is installed, bundle JS and CSS to make site loading faster
-# USE_BUNDLES = True
+# USE_BUNDLES = False
 
 # Plugins you don't want to use. Be careful :-)
 # DISABLED_PLUGINS = ["render_galleries"]
@@ -964,7 +963,27 @@ LOGGING_HANDLERS = {
 
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
-GLOBAL_CONTEXT = {}
+#GLOBAL_CONTEXT = {
+#        "lanyon_subtheme": "theme-base-09"
+#    }
+# GLOBAL_CONTEXT = {'blog_sidebar': """\
+# <div class="sidebar-module sidebar-module-inset">
+#   <h4>About</h4>
+#   <p>This is the Bootstrap Blog theme by @mdo, adapted for Nikola by @Kwpolska.
+#   And this sidebar is completely customizable — you can put anything you want
+#   here!</p>
+# </div>
+# <div class="sidebar-module">
+#   <h4>Links</h4>
+#   <ol class="list-unstyled">
+#     <li><a href="http://getbootstrap.com/examples/blog/">Bootstrap Blog Theme</a></li>
+#     <li><a href="https://getnikola.com/">Nikola</a></li>
+#     <li><a href="https://twitter.com/mdo">@mdo</a></li>
+#     <li><a href="https://twitter.com/Kwpolska">@Kwpolska</a></li>
+#     <li><a href="https://twitter.com/GetNikola">@GetNikola</a></li>
+#   </ol>
+# </div>
+# """}
 
 # Add functions here and they will be called with template
 # GLOBAL_CONTEXT as parameter when the template is about to be

@@ -739,7 +739,7 @@ MathJax.Hub.Config({
 # done in the code, hope you don't mind ;-)
 # Note: most Nikola-specific extensions are done via the Nikola plugin system,
 #       with the MarkdownExtension class and should not be added here.
-# MARKDOWN_EXTENSIONS = ['fenced_code', 'codehilite']
+MARKDOWN_EXTENSIONS = ['fenced_code', 'codehilite', 'tables']
 
 # Extra options to pass to the pandoc comand.
 # by default, it's empty, is a list of strings, for example

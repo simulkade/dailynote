@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-1- Do we pay enough attention to the boundary conditions? Sometimes too much, sometimes too little. I have read many papers, that simulates a physical system, that is well described, with no mention of the boundary conditions. Consider [Danckwerts](https://en.wikipedia.org/wiki/Peter_Danckwerts) [boundary condition[(http://www.sciencedirect.com/science/article/pii/0009250953800011). Many people don't consider it in their simulations. Wrong boundary conditions results in erroneous outcome from a well thought-out model. I'm going to consider the importance of the boundary conditions in my reviews; major revision if you fail to describe it! When do we pay too much attention to the boundary conditions? Mostly in life, specially in politics. I have to think more about it.  
+1- Do we pay enough attention to the boundary conditions? Sometimes too much, sometimes too little. I have read many papers, that simulates a physical system, that is well described, with no mention of the boundary conditions. Consider [Danckwerts](https://en.wikipedia.org/wiki/Peter_Danckwerts) [boundary condition](http://www.sciencedirect.com/science/article/pii/0009250953800011). Many people don't consider it in their simulations. Wrong boundary conditions results in erroneous outcome from a well thought-out model. I'm going to consider the importance of the boundary conditions in my reviews; major revision if you fail to describe it! When do we pay too much attention to the boundary conditions? Mostly in life, specially in politics. I have to think more about it.  
 
 2- Write a post about the change of temperature with altitude in the atmosphere. Use coolprop.  
 

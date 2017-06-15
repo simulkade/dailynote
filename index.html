@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="http://dailynote.simulkade.com/index.html">
+<link rel="next" href="index-1.html" type="text/html">
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
@@ -21,7 +22,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script><!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/2017-06-12-daily-notes.html" type="text/html">
+</script><!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/2017-06-15-daily-note.html" type="text/html">
 </head>
 <body>
     <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -58,7 +59,83 @@ MathJax.Hub.Config({
         
 
 <div class="posts">
-    <article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/2017-06-12-daily-notes.html" class="u-url">2017-06-12 daily notes</a></h1>
+    <article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/2017-06-15-daily-note.html" class="u-url">2017-06-15 daily note</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">AA Eftekhari</span></p>
+            <p class="dateline"><a href="posts/2017-06-15-daily-note.html" rel="bookmark"><time class="post-date published dt-published" datetime="2017-06-15T09:03:47+02:00" title="2017-06-15 09:03">2017-06-15 09:03</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/2017-06-15-daily-note.html#disqus_thread" data-disqus-identifier="cache/posts/2017-06-15-daily-note.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>1- Do we pay enough attention to the boundary conditions? Sometimes too much, sometimes too little. I have read many papers, that simulates a physical system, that is well described, with no mention of the boundary conditions. Consider <a href="https://en.wikipedia.org/wiki/Peter_Danckwerts">Danckwerts</a> [boundary condition[(http://www.sciencedirect.com/science/article/pii/0009250953800011). Many people don't consider it in their simulations. Wrong boundary conditions results in erroneous outcome from a well thought-out model. I'm going to consider the importance of the boundary conditions in my reviews; major revision if you fail to describe it! When do we pay too much attention to the boundary conditions? Mostly in life, specially in politics. I have to think more about it.  </p>
+<p>2- Write a post about the change of temperature with altitude in the atmosphere. Use coolprop.  </p>
+<p>3- This is how I read excel files (different sheets) and save the sheets as csv files using Pandas, PyCall, and Julia.</p>
+<pre class="code literal-block"><span></span><span class="c"># make sure that pandas and xlrd are installed:</span>
+<span class="c"># sudo pip install pandas</span>
+<span class="c"># sudo pip install xlrd</span>
+<span class="k">using</span> <span class="n">PyCall</span>
+<span class="nd">@pyimport</span> <span class="n">pandas</span> <span class="n">as</span> <span class="n">pd</span>
+<span class="n">file_names</span><span class="o">=</span><span class="p">[</span><span class="s">"Geothermal_Q100_.xlsx"</span><span class="p">,</span> <span class="s">"Geothermal_Q150_.xlsx"</span><span class="p">,</span> 
+    <span class="s">"Geothermal_Q200_.xlsx"</span><span class="p">,</span> <span class="s">"Geothermal_Q250_.xlsx"</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">fn</span> <span class="kp">in</span> <span class="n">file_names</span>
+    <span class="n">x1</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">ExcelFile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+    <span class="n">sh_names</span> <span class="o">=</span> <span class="n">x1</span><span class="p">[</span><span class="o">:</span><span class="n">sheet_names</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">sh</span> <span class="kp">in</span> <span class="n">sh_names</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">sh</span><span class="p">)</span>
+        <span class="n">df</span><span class="p">[</span><span class="o">:</span><span class="n">to_csv</span><span class="p">](</span><span class="n">fn</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="k">end</span><span class="o">-</span><span class="mi">5</span><span class="p">]</span><span class="o">*</span><span class="n">sh</span><span class="o">*</span><span class="s">".csv"</span><span class="p">)</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+</pre>
+
+
+<p>4- Finally finished the code for the geothermal energy problem, including the sensitivity analysis. I'll run it on my other laptop at home. This laptop is fine, but not a workhorse. The outcome of these simulations will be in a paper, and most probably in a presentation next month.  </p>
+<p>5- A quiet evening. Birds chirping outside the window and I'm killing myself by listening to <a href="https://www.radiojavan.com/mp3s/album/Homayoun-Shajarian-Rage-Khab?index=0">this song</a> from Homayoon Shajarian. What an amazing voice. The results of my simulations are good. So far I have only analyzed a few samples, and now I'm going to do all 150 simulation results automatically. You can find the results of my work in <a href="https://github.com/simulkade/geothermal">this repository</a>.  </p>
+</div>
+    </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/2017-06-14-daily-note.html" class="u-url">2017-06-14 daily note</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">AA Eftekhari</span></p>
+            <p class="dateline"><a href="posts/2017-06-14-daily-note.html" rel="bookmark"><time class="post-date published dt-published" datetime="2017-06-14T08:54:43+02:00" title="2017-06-14 08:54">2017-06-14 08:54</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/2017-06-14-daily-note.html#disqus_thread" data-disqus-identifier="cache/posts/2017-06-14-daily-note.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>1- I just learned <a href="https://askubuntu.com/questions/490612/how-do-i-automate-the-activation-of-python-environment#comment656705_490613">a good trick</a> to start my python 3 virtual environment that I use for running Nikola to update this blog. Add the following line to the end of your .bashrc file (located in your home folder):</p>
+<pre class="code literal-block"><span></span>alias py3="source ~/(path to your virtualenv)/bin/activate"
+</pre>
+
+
+<p>Now I can easily start my virtual environment by typing <code>py3</code> in the terminal.  </p>
+<p>2- I just found out that in my <code>JFVM.jl</code> package, I can create 2D and 3D cell variable by assigning 1D arrays of the right size to the <code>createCellVariable</code> function, without reshaping the 1D array! It makes things (just a bit) easier in my reactive transport codes.  </p>
+<p>3- I bought some dried fruits and cashew nuts from <a href="https://www.basboernoten.nl">this online shop</a>. I just want to recommend it here if you happen to be close to the Netherlands. They have excellent products with a reasonable price (for this region).</p>
+<p>4- Finally solved the geothermal problem in Julia, and just in time, because I have to go and pick up Aida from school.</p>
+</div>
+    </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/2017-06-13-daily-note.html" class="u-url">2017-06-13 daily note</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">AA Eftekhari</span></p>
+            <p class="dateline"><a href="posts/2017-06-13-daily-note.html" rel="bookmark"><time class="post-date published dt-published" datetime="2017-06-13T08:20:06+02:00" title="2017-06-13 08:20">2017-06-13 08:20</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/2017-06-13-daily-note.html#disqus_thread" data-disqus-identifier="cache/posts/2017-06-13-daily-note.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <p>I just deleted my yahoo account, after receiving an email that someone from Thailand has tried to log into my account, I thought it is safer to delete an account that is barely active these days, and is full of spam anyway. I don't feel nostalgic at all. It feels like throwing away a pair of damaged shoes.  </p>
+    </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/2017-06-12-daily-notes.html" class="u-url">2017-06-12 daily notes</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">AA Eftekhari</span></p>
             <p class="dateline"><a href="posts/2017-06-12-daily-notes.html" rel="bookmark"><time class="post-date published dt-published" datetime="2017-06-12T09:13:52+02:00" title="2017-06-12 09:13">2017-06-12 09:13</time></a></p>
@@ -221,42 +298,14 @@ I found the B value by fitting the above equation to the viscosity data of n-Dod
 <p>The most important problem with using the analytical solution of the BL equation as an objective function is that very occasionally, the shock front cannot be found with a reasonable numerical accuracy. This blows up the objective function and the whole optimization procedure. Perhaps, I should try the numerical solution (upwind) that is slower, but (almost) always converges.  </p>
 </div>
     </div>
-    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/2017-05-31-daily-notes.html" class="u-url">2017-05-31 daily notes</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">AA Eftekhari</span></p>
-            <p class="dateline"><a href="posts/2017-05-31-daily-notes.html" rel="bookmark"><time class="post-date published dt-published" datetime="2017-05-31T08:57:10+02:00" title="2017-05-31 08:57">2017-05-31 08:57</time></a></p>
-                <p class="commentline">
-        
-    <a href="posts/2017-05-31-daily-notes.html#disqus_thread" data-disqus-identifier="cache/posts/2017-05-31-daily-notes.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>I have decided to write whatever comes to my mind every day.<br>
-Writing the paper on the exergy analysis of geothermal energy, and thinking about the methane carbon emission and specific exergy. The chemical exergy of methane comes from the sun, which is of course clear since we don't have any other energy source (well perhaps geothermal and nuclear are different unless. Unless we are debris of the sun?). Anyway, the funny part is that what we burn now as fossil fuel is the sunshine of millions of years ago that is stored underground. Wood is the sunshine of several years ago. Wind and waves are the sunshine of few days ago perhaps? I'm not sure.  </p>
-<p>I'm thinking about getting the temperature history for, e.g., last year to calculate the heat loss from a building block and use it to estimate the energy requirement for warming. These are some of the usefull links I have found so far. I will go through them later:</p>
-<ul>
-<li>https://www.earthsystemcog.org/projects/openclimategis/</li>
-<li>http://icclim.readthedocs.io/en/latest/python_api.html</li>
-<li>https://github.com/cerfacs-globc/icclim</li>
-<li>https://www.ncdc.noaa.gov/cdo-web/#t=secondTabLink</li>
-<li>https://www.wunderground.com/weather/api/d/docs?d=data/history</li>
-<li>https://github.com/csparpa/pyowm  </li>
-</ul>
-<p>I also looked into the bicycle trailers (fietskar in Dutch or Cykeltrailer in Danish) to find out whether it is possible to use one to carry Aidin around. Apparently, there is a small seat that can be installed inside a trailer for newborns.  </p>
-<p>I wrote two more pages of our paper. The mathematical modeling section is now complete. Tomorrow I'll work on the results and discussion and then hopefully before the end of the week I can take care of the introduction and send it away.  </p>
-<p>Now I'm going home to have a cup of coffee (decaf), play with Aidin, and work on another paper if time permits.</p>
-</div>
-    </div>
     </article>
 </div>
 
-
-
-        
-       <script>var disqus_shortname="simulkade";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-yYfngbEKv4RENfGDvNUqJTqGFcKf31NJEe9OTnnMH3Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        <nav class="postindexpager"><ul class="pager">
+<li class="next">
+                <a href="index-1.html" rel="next">Older posts</a>
+            </li>
+        </ul></nav><script>var disqus_shortname="simulkade";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-yYfngbEKv4RENfGDvNUqJTqGFcKf31NJEe9OTnnMH3Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],

@@ -59,7 +59,34 @@ MathJax.Hub.Config({
         
 
 <div class="posts">
-    <article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/2017-05-31-daily-notes.html" class="u-url">2017-05-31 daily notes</a></h1>
+    <article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/2017-06-01-daily-notes.html" class="u-url">Daily notes - 1 June 2017</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">AA Eftekhari</span></p>
+            <p class="dateline"><a href="posts/2017-06-01-daily-notes.html" rel="bookmark"><time class="post-date published dt-published" datetime="2017-06-01T08:34:44+02:00" title="2017-06-01 08:34">2017-06-01 08:34</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/2017-06-01-daily-notes.html#disqus_thread" data-disqus-identifier="cache/posts/2017-06-01-daily-notes.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>I'm in the library and this is my plan for today:</p>
+<ul>
+<li>Read the recovery data from the data base</li>
+<li>Write an objective function based on the Buckley-Leverett formulation</li>
+<li>Run the optimization problem in Julia</li>
+<li>Optimize the rel-perm parameters</li>
+</ul>
+<p>Funny story: the paper that has done core flooding and reported the recovery data at high temperature, does not report the viscosity of oil at high temperature. I had to calculate it using this correlation:
+$$\ln(\frac{\mu}{\mu_0}) = B(\frac{1}{T}-\frac{1}{T_0})$$
+I found the B value by fitting the above equation to the viscosity data of n-Dodecane. The viscosity data comes from the cool <a href="http://www.coolprop.org">CoolProp</a> package.  </p>
+<p>The recovery data is not a straight line at the beginning of the core flooding. It must be a problem in choosing the right moment to start the timer. I shifted the curve to make it consistent.  </p>
+<p>The most important problem with using the analytical solution of the BL equation as an objective function is that very occasionally, the shock front cannot be found with a reasonable numerical accuracy. This blows up the objective function and the whole optimization procedure. Perhaps, I should try the numerical solution (upwind) that is slower, but (almost) always converges.  </p>
+</div>
+    </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/2017-05-31-daily-notes.html" class="u-url">2017-05-31 daily notes</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">AA Eftekhari</span></p>
             <p class="dateline"><a href="posts/2017-05-31-daily-notes.html" rel="bookmark"><time class="post-date published dt-published" datetime="2017-05-31T08:57:10+02:00" title="2017-05-31 08:57">2017-05-31 08:57</time></a></p>
@@ -95,7 +122,19 @@ Writing the paper on the exergy analysis of geothermal energy, and thinking abou
 <li class="previous">
                 <a href="index.html" rel="prev">Newer posts</a>
             </li>
-        </ul></nav><script>var disqus_shortname="simulkade";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer id="footer"><p>Contents © 2017         <a href="mailto:a.a.eftekhari@outlook.com">AA Eftekhari</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         </p>
+        </ul></nav><script>var disqus_shortname="simulkade";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-yYfngbEKv4RENfGDvNUqJTqGFcKf31NJEe9OTnnMH3Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'center' to center equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><footer id="footer"><p>Contents © 2017         <a href="mailto:a.a.eftekhari@outlook.com">AA Eftekhari</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         </p>
             
         </footer>
 </div>
